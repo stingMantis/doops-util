@@ -1,3 +1,5 @@
 -create doops_main
 -should take command line arguments
 -when doops print out a file, it should create a header in format: phone number, duplicated
+-create doopsCPP, doopsPy folder
+
