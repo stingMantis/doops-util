@@ -1,5 +1,6 @@
 -create doops_main
+-update LISCENCE
 -should take command line arguments
 -when doops print out a file, it should create a header in format: phone number, duplicated
 -create doopsCPP, doopsPy folder
-
+-python version should use C implementation underneath with simple: import Cdoops
