@@ -9,6 +9,9 @@
 #define nums "0123456789"/*allowable digits in phone number*/
 #define DOOPS_VERSION "1.0.1"
 
+#define INTERNAL_DUPES "internal-doops.txt"
+#define SUP_DUPES "suppression-doops.txt"
+
 /*basic record struct and we can add complexity to it later ex: addy*/
 typedef struct{
         char flag;

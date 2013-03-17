@@ -6,7 +6,6 @@
 #include <time.h>
 #include "doops.h"
 
-
 /*first thing to do is get the name of the file to parse and work on*/
 FILE *doops_open_file_name(void){
      char filename[SIZE];
@@ -26,7 +25,7 @@ FILE *doops_open_file_name(void){
          printf("File opened successfully\n");
          return fp;
         } 
-     }/*end of while, return null since no entry given*/
+    }
  return NULL;       
 }
 
@@ -69,7 +68,6 @@ doops_t *doops_load_lead_file(FILE *filename,long num_of_records){
            }//end of if block
         }//for loop finished next seq position
        
-       
       /*create a new record in the file*/     
         if( ( character == '\n')){
              record[record_count].phone_digit[seq_ndx] = '\0';
@@ -102,7 +100,7 @@ void doops_find_duplicates_in_files(doops_t *lead_file,long recs,doops_t *sup_fi
      /*if there is no suppression file called just dedoops internal lead file*/
      if ( (sup_file == NULL) ){
         /*open the outfile for internal dupes to print to*/
-        if ( (outfile=fopen("checked_against_lead_file.txt","w")) == NULL){
+        if ( (outfile=fopen(INTERNAL_DUPES,"w")) == NULL){
         perror("unable to open file");
         exit(EXIT_FAILURE);
         }
@@ -129,7 +127,7 @@ void doops_find_duplicates_in_files(doops_t *lead_file,long recs,doops_t *sup_fi
        /*else if both a lead file and suppression file present*/
   else{
     /*print results compared against suppression file*/
-      if ( (outfile = fopen("checked_against_supression_file.txt","w")) == NULL){
+      if ( (outfile = fopen(SUP_DUPES,"w")) == NULL){
           perror("error: ");
           exit(EXIT_FAILURE);
          }
@@ -239,6 +237,7 @@ void doops_call_to_print_internal_dupes(){
 
 /*interface to non gui doops*/
 void doops_non_gui_menu(){
+     //check if this works on nix too
      #ifdef __WIN32
      system("title Doops Sup Util");
      system("color 1b");
