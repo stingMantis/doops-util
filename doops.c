@@ -237,11 +237,6 @@ void doops_call_to_print_internal_dupes(){
 
 /*interface to non gui doops*/
 void doops_non_gui_menu(){
-     //check if this works on nix too
-     #ifdef __WIN32
-     system("title Doops Sup Util");
-     system("color 1b");
-     #endif
      
      int max = 20;
      char temp[max];/*holds user input*/
@@ -262,6 +257,5 @@ void doops_non_gui_menu(){
        return;/*in case its a '\n' thats entered*/
      }/*end of while*/
      return;
-     system("cls");
 }/*end of doops_menu() */   
 
