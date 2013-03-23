@@ -1,10 +1,5 @@
--create doops_main
--update LISCENCE
--should take command line arguments
--when doops print out a file, it should create a header in format: phone number, duplicated
--create doopsCPP, doopsPy folder
--python version should use C implementation underneath with simple: import Cdoops
 -function generate_samples() //generates sample files
+-when doops print out a file, it should create a header in format: phone number, duplicated
+-create as python module
 -include our make file
--create better menu maybe with char* menu[]...
--check with nix if system title works 
+-implemnt shell script to do the same but using uniq and uniq -d....obviously this way has benefits of being os independant...
