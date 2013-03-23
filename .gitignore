@@ -1,5 +1,8 @@
 #object files
 *.o
 
+#vim crap
+*.swp
+
 #project name
 doops
