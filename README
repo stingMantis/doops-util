@@ -1,1 +1,10 @@
 A suppression utility to remove duplicate phone numbers....
+
+#linux compilation
+cd doops
+make
+./doops
+
+#cli alternative
+gcc -Wall doops.c main.c -o doops
+./doops

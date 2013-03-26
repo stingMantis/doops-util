@@ -1,5 +1,4 @@
--function generate_samples() //generates sample files
+-function generate_samples() definition and invoked in main
 -when doops print out a file, it should create a header in format: phone number, duplicated
 -create as python module
--include our make file
 -implemnt shell script to do the same but using uniq and uniq -d....obviously this way has benefits of being os independant...

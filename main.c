@@ -1,4 +1,5 @@
 //doops main
+#include "doops.h"
 
 int main(void){
 

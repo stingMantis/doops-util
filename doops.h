@@ -2,6 +2,9 @@
 #ifndef DOOPS_HEADER
 #define DOOPS_HEADER
 
+//for FILE*
+#include <stdio.h> 
+
 #define SIZE 200/*a basic buffer size used by filename[char]*/
 #define DIGITS 30/*for phone number digits*/
 #define nums "0123456789"/*allowable digits in phone number*/
@@ -18,16 +21,16 @@ typedef struct{
 /*ex: doops_t[NUM_RECORDS].phone_digit[ndx]='3'*/
 
 //generates sample files to play with
-void doops_create_samples()
+void doops_create_samples();
 
 /*opens file for reading and work and returns its addy*/
 FILE* doops_open_file_name(void);
 
 /*goes through a given file and counts num of records*/
-long doops_num_of_records(FILE *);
+long doops_num_of_records(FILE*);
 
 /*allocate contents of file to struct*/
-doops_t *doops_load_lead_file(FILE *,long );
+doops_t *doops_load_lead_file(FILE*,long );
 
 /*removes doops from lead/suppression based on parameters and prints out*/
 void doops_find_duplicates_in_files(doops_t *lead_file,long num_of_leads,doops_t *sup_file,long num_of_sup);
