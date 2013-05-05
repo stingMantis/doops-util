@@ -6,6 +6,11 @@
 #include <time.h>
 #include "doops.h"
 
+//generate sample files to play with 
+void doops_create_samples(){
+	puts("dummy item right now...");
+}
+
 /*first thing to do is get the name of the file to parse and work on*/
 FILE *doops_open_file_name(void){
      char filename[SIZE];
@@ -108,6 +113,9 @@ void doops_find_duplicates_in_files(doops_t *lead_file,long recs,doops_t *sup_fi
      /*else start counting from first entry and print that entry to output file*/
      for(prev=0;prev<recs;prev++){
        printf("Checking record: %ld\r",prev);                          
+		 //this is where we should print the header:
+		 //if(prev == 0 ) fputs("phone number, duplicated", outfile); 
+
        fprintf(outfile,"%s,",lead_file[prev].phone_digit);/*print that first record
        then compare it against all other records in the file*/
          for(next=prev+1;next<recs;next++){/*start counting from next number*/
@@ -242,8 +250,9 @@ void doops_non_gui_menu(){
      char temp[max];/*holds user input*/
      
      printf("Please Make your selection or press [ENTER] to quit Doops:\n\n");
-     puts("a)Find Doops in lead File");
-     puts("b)Find Doops from suppresion File");
+	  puts("a) Find Doops in lead File");
+     puts("b) Find Doops from suppresion File");
+	  puts("c) Create sample files");
      
      /*this menu sucks if you don't enter in a lead file name for choice a
      then it goes to each succesive choice until to exit....so we put break
@@ -252,6 +261,7 @@ void doops_non_gui_menu(){
        switch(toupper(temp[0]) ){
          case 'A':doops_call_to_print_internal_dupes();doops_non_gui_menu();break;
          case 'B':doops_call_to_print_supression_dupes();doops_non_gui_menu();break;
+			case 'C':doops_create_samples(); doops_non_gui_menu();break;
          default :puts("That Choice is Not Available.");doops_non_gui_menu();
        }/*end of switch*/
        return;/*in case its a '\n' thats entered*/
